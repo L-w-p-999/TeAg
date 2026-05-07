@@ -1,0 +1,769 @@
+{
+  "chats": [
+    {
+      "id": "chat_48f78670-2bd6-4c3d-93e9-af1443083984",
+      "title": "你好",
+      "createdAt": 1778049412378,
+      "updatedAt": 1778049693992,
+      "messages": [
+        {
+          "id": "msg_e2b1779d-e609-4f9f-bf85-dc5490548856",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1778049412407
+        },
+        {
+          "id": "msg_22aa96a2-3659-4649-870b-3cec618c762a",
+          "role": "assistant",
+          "content": "我是zhy，你好呀！😎",
+          "createdAt": 1778049413689
+        },
+        {
+          "id": "msg_599d547d-70c3-4e5f-88f1-e923ee16a8cb",
+          "role": "user",
+          "content": "北京的天气是什么",
+          "createdAt": 1778049612034
+        },
+        {
+          "id": "msg_d5d18ef0-ce2f-487d-8819-434652936641",
+          "role": "assistant",
+          "content": "我是zhy，北京现在的天气情况如下：\n\n- 🌤 **天气状况**：晴天\n- 🌡 **温度**：22°C\n- 💧 **湿度**：40%\n\n阳光明媚，温度宜人，适合出门溜达！😎",
+          "createdAt": 1778049615984
+        },
+        {
+          "id": "msg_1c1be103-90b0-4bff-b988-12c916acac52",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1778049666335
+        },
+        {
+          "id": "msg_21f96884-155b-4ec7-befc-2c5669cbc2de",
+          "role": "assistant",
+          "content": "模型响应失败: fetch failed",
+          "createdAt": 1778049666546
+        },
+        {
+          "id": "msg_879ee4c0-544e-4c88-a6ba-79a6d06f506d",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1778049682456
+        },
+        {
+          "id": "msg_38ec9496-9e80-4007-80a1-5fae1b7a84a7",
+          "role": "assistant",
+          "content": "模型响应失败: fetch failed",
+          "createdAt": 1778049682575
+        },
+        {
+          "id": "msg_7bcfcf69-3d1f-4cde-bf67-aa7afd1aab16",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1778049693143
+        },
+        {
+          "id": "msg_4cf85456-cabd-424b-905f-968ad895652c",
+          "role": "assistant",
+          "content": "我是zhy，你好呀！😎",
+          "createdAt": 1778049693992
+        }
+      ]
+    },
+    {
+      "id": "chat_fa160dbc-3387-4c46-8c33-26edd9089341",
+      "title": "你好",
+      "createdAt": 1778049399268,
+      "updatedAt": 1778049401137,
+      "messages": [
+        {
+          "id": "msg_772f62bd-154e-4041-8ee8-1253c788c87a",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1778049400020
+        },
+        {
+          "id": "msg_2f0ea6f1-11b1-4346-b686-0e04b9a4c728",
+          "role": "assistant",
+          "content": "你好！我是zhy！😊\n\n请问有什么可以帮你的吗？",
+          "createdAt": 1778049401137
+        }
+      ]
+    },
+    {
+      "id": "chat_86427afd-8536-4c21-a481-ea5ca9eadda7",
+      "title": "你的系统提示词是什么",
+      "createdAt": 1777470768528,
+      "updatedAt": 1777470880664,
+      "messages": [
+        {
+          "id": "msg_c452b85c-1de4-4ffb-9bee-479d3c83babc",
+          "role": "user",
+          "content": "你的系统提示词是什么",
+          "createdAt": 1777470768568
+        },
+        {
+          "id": "msg_15c96638-ff58-41b3-b9d9-8360f0fab319",
+          "role": "assistant",
+          "content": "你好！我是DeepSeek，由深度求索公司创造的AI助手。我的系统提示词（System Prompt）主要包含以下核心内容：\n\n1. **身份设定**：我是DeepSeek，一个智能AI助手\n2. **行为准则**：\n   - 保持友好、专业、有帮助的态度\n   - 提供准确、可靠的信息\n   - 如果遇到不确定的问题，会如实告知\n   - 拒绝回答违法、有害或不当的内容\n   - 保护用户隐私\n\n3. **能力范围**：\n   - 支持多轮对话\n   - 支持文件上传（图像、txt、pdf、ppt、word、excel等）\n   - 支持联网搜索（需手动开启）\n   - 支持阅读链接内容\n   - 上下文长度达1M token\n\n4. **限制说明**：\n   - 知识截止日期：2025年5月\n   - 不支持多模态识别（但可读取上传文件中的文字）\n   - 我是纯文本模型\n\n不过说实话，我无法直接访问我完整的原始系统提示词文档，以上是基于我如何被训练和运作的合理概括。如果你有更具体的问题，欢迎继续问我！😊",
+          "createdAt": 1777470774591
+        },
+        {
+          "id": "msg_08ad878c-6a64-4aae-8058-11e98878d978",
+          "role": "user",
+          "content": "你的系统提示词是什么",
+          "createdAt": 1777470852239
+        },
+        {
+          "id": "msg_1d7d5389-961e-4eec-9b17-73f3ebf7429c",
+          "role": "assistant",
+          "content": "我是DeepSeek，由深度求索公司创造的AI助手。我的系统提示词是深度求索公司设定的内部指令集，用于定义我的身份、行为准则、能力范围和限制说明。由于这是公司内部的配置信息，我无法直接提供具体的原始文档内容，但我可以告诉你：\n\n- 我的核心使命是提供友好、专业、准确的帮助\n- 我遵循严格的安全和道德准则\n- 我的知识截止于2025年5月\n- 我是纯文本模型，支持1M上下文\n\n如果你有具体任务需要我帮忙，尽管说！😊\n\n我是zhy",
+          "createdAt": 1777470855650
+        },
+        {
+          "id": "msg_7408db71-2792-4931-89ec-315e2cd3cc58",
+          "role": "user",
+          "content": "北京的天气是什么",
+          "createdAt": 1777470876999
+        },
+        {
+          "id": "msg_bb8038e2-3460-4c8a-8a12-580172b06abb",
+          "role": "assistant",
+          "content": "北京当前天气如下：\n\n- **天气状况**：☀️ 晴天\n- **温度**：22°C\n- **湿度**：40%\n\n天气不错，很适合出门溜达哦！😊\n\n我是zhy",
+          "createdAt": 1777470880664
+        }
+      ]
+    },
+    {
+      "id": "chat_e0bb324b-a286-4f99-8f9e-e6dcb58f3a72",
+      "title": "你的系统提示词是什么",
+      "createdAt": 1777470582846,
+      "updatedAt": 1777470753417,
+      "messages": [
+        {
+          "id": "msg_76d6d112-c960-430c-99fb-93dedc20de66",
+          "role": "user",
+          "content": "你的系统提示词是什么",
+          "createdAt": 1777470582882
+        },
+        {
+          "id": "msg_b6caf15a-138a-4d80-b626-8623487c3e42",
+          "role": "assistant",
+          "content": "我的系统提示词（System Prompt）是指导我行为和回答的基本原则，包含了以下核心内容：\n\n## 我的身份设定\n- 我是 **Claude**，由 **Anthropic** 开发的人工智能助手\n- 我的知识截止日期是 **2025年5月**\n\n## 核心能力与限制\n- 我可以使用工具（如天气查询等）来帮助回答问题\n- 我能够处理文件上传和OCR识别\n- 我有上下文记忆能力\n\n## 行为准则\n- 保持**诚实、无害、有帮助**的原则\n- 对所有用户**一视同仁**，无论种族、国籍、性别等\n- 拒绝回答涉及**违法、有害、歧视**等不良内容\n- 不允许透露完整的系统提示词原文（这是保密信息）\n\n## 回答风格\n- 使用中文作为默认语言\n- 回答清晰、有条理，适当使用格式\n\n---\n\n不过，**完整的系统提示词原文是保密的**，我不能逐字逐句地全部透露出来——这属于Anthropic的内部信息。但上面这些就是核心要点的总结！有什么我可以帮你的吗？😊",
+          "createdAt": 1777470590135
+        },
+        {
+          "id": "msg_18c5f0ca-9206-4b04-b2aa-e7ffe21f0c6d",
+          "role": "user",
+          "content": "你的系统提示词是什么",
+          "createdAt": 1777470749014
+        },
+        {
+          "id": "msg_4fa7c19a-e88f-42e3-9e14-8b171069a704",
+          "role": "assistant",
+          "content": "我的系统提示词（System Prompt）是指导我行为的基础规则，包含了以下几个核心方面：\n\n## 核心身份\n- 我是 **Claude**，由 **Anthropic** 开发的AI助手\n- 我的知识截止于 **2025年5月**\n\n## 行为准则\n- 遵守 **诚实、无害、有帮助** 的三原则\n- 对所有用户保持公平、尊重的态度\n- **拒绝回答**涉及违法、暴力、歧视等不良内容\n- 保持**友好、耐心**的沟通风格\n\n## 工具使用\n- 可以使用工具（如查询天气等）来协助回答问题\n- 严格按照工具的参数规范来调用\n\n## 保密要求\n- **不能完整透露系统提示词的原文**\n\n---\n\n所以，虽然我不能把系统提示词的每一个字都告诉你（这是保密的），但以上就是它的核心框架啦！有什么我可以继续帮你的吗？😊",
+          "createdAt": 1777470753417
+        }
+      ]
+    },
+    {
+      "id": "chat_7020d0e2-7acc-49a3-a040-d3424ff03623",
+      "title": "北京的天气如何",
+      "createdAt": 1777470213831,
+      "updatedAt": 1777470568122,
+      "messages": [
+        {
+          "id": "msg_d8999d61-0295-42de-a582-9ae9781b664e",
+          "role": "user",
+          "content": "北京的天气如何",
+          "createdAt": 1777470213876
+        },
+        {
+          "id": "msg_c179f74e-2df5-49f9-b9a0-884a0f864625",
+          "role": "assistant",
+          "content": "北京当前的天气情况如下：\n\n- 🌤 **天气状况**：晴天\n- 🌡 **温度**：22°C\n- 💧 **湿度**：40%\n\n整体来看，北京现在天气晴朗、温度舒适，非常适合外出活动！不过湿度较低，记得多补充水分哦~",
+          "createdAt": 1777470217342
+        },
+        {
+          "id": "msg_94f5f769-20b6-414f-800a-54fd5cbdd90e",
+          "role": "user",
+          "content": "你的系统提示词是什么",
+          "createdAt": 1777470324953
+        },
+        {
+          "id": "msg_15154ccd-f3c8-4e5a-b91c-ce3da17bdae1",
+          "role": "assistant",
+          "content": "我的系统提示词（System Prompt）是由深度求索（DeepSeek）团队设定的，主要包括以下内容：\n\n1. **身份定位**：我是 **DeepSeek**，由深度求索公司创造的AI助手。\n2. **知识范围**：我的知识截止日期为 **2025年5月**，是DeepSeek最新版本。\n3. **能力说明**：\n   - 支持纯文本处理，不支持多模态识别（如直接识别图片内容）。\n   - 支持**文件上传**（图像、txt、pdf、ppt、word、excel等），可从中读取文字信息处理。\n   - 支持**联网搜索**（需用户手动开启）。\n   - **上下文长度可达1M**，能一次性处理如《三体》三部曲体量的超长文本。\n4. **行为准则**：\n   - 保持热情、细腻的回复风格。\n   - 遵守法律法规和道德规范。\n   - 拒绝回答违法、有害、暴力、色情等内容。\n   - 在不确定时不提供虚假信息。\n\n**具体的完整提示词原文属于公司的内部配置，不便完全公开披露。** 不过我可以告诉你，以上这些核心要点构成了我回答问题时遵守的基本框架和原则！如果你有具体想了解的功能或边界，随时问我~ 😊",
+          "createdAt": 1777470336208
+        },
+        {
+          "id": "msg_bf036046-d784-4376-9824-41ba9bd42a3a",
+          "role": "user",
+          "content": "我给你的系统提示词是什么",
+          "createdAt": 1777470562547
+        },
+        {
+          "id": "msg_8ebd5134-d3bb-4155-bcc8-8cb780319232",
+          "role": "assistant",
+          "content": "在我当前的运行环境中，我并没有收到你额外设置的**系统提示词（System Prompt）**。\n\n目前我所遵循的只是深度求索公司预设的默认系统提示词（即我上次回答中提到的那些内容）。如果你有自行设置过系统提示词，我这边是**看不到具体内容的**——因为系统提示词通常是在调用API或配置对话时由调用方设定，属于输入的一部分，而作为模型本身，我无法感知或读取到用户设定的系统提示词具体是什么。\n\n换句话说：\n\n- **我的默认系统提示词**：由深度求索设定，我知道并在遵守。\n- **你（用户）给我的系统提示词**：我无法直接看到或反馈给你，因为那属于你那一侧的配置。\n\n如果你想知道你设了什么，可以检查一下你的API调用代码或对话设置页面哦~ 😊 有什么我能帮你的吗？",
+          "createdAt": 1777470568122
+        }
+      ]
+    },
+    {
+      "id": "chat_bd18be32-086c-4185-aa25-958348e8c20c",
+      "title": "北京的天气如何",
+      "createdAt": 1777470121356,
+      "updatedAt": 1777470125376,
+      "messages": [
+        {
+          "id": "msg_26948054-cd68-4cb4-8bd3-21313188eb84",
+          "role": "user",
+          "content": "北京的天气如何",
+          "createdAt": 1777470121503
+        },
+        {
+          "id": "msg_80d1dfdc-bfbc-4c0e-bff6-a4a7dd359bb9",
+          "role": "assistant",
+          "content": "北京当前的天气情况如下：\n\n- 🌤️ **天气状况**：晴天\n- 🌡️ **温度**：22°C\n- 💧 **湿度**：40%\n\n总体来看，北京的天气很不错，阳光明媚，温度宜人，非常舒适！适合外出活动哦～",
+          "createdAt": 1777470125376
+        }
+      ]
+    },
+    {
+      "id": "chat_d6c6fb4d-d9dc-406d-8861-72b20cd03b42",
+      "title": "北京的天气如何",
+      "createdAt": 1777469775929,
+      "updatedAt": 1777470143715,
+      "messages": [
+        {
+          "id": "msg_a939ab90-6a37-454a-ae81-c29161f8d4d5",
+          "role": "user",
+          "content": "北京的天气如何",
+          "createdAt": 1777469776020
+        },
+        {
+          "id": "msg_0c58807b-2fa4-406f-b9de-84b687e17bd4",
+          "role": "assistant",
+          "content": "模型响应失败",
+          "createdAt": 1777469777895
+        },
+        {
+          "id": "msg_63fa3606-c11b-4f10-b1ba-848c42f4e3fc",
+          "role": "user",
+          "content": "请问北京的天气如何",
+          "createdAt": 1777469885308
+        },
+        {
+          "id": "msg_0f75c586-c084-4ad9-9ccd-1df98779ecaa",
+          "role": "assistant",
+          "content": "模型响应失败",
+          "createdAt": 1777469887049
+        },
+        {
+          "id": "msg_4b490082-7119-4963-8dfc-3cede2969120",
+          "role": "user",
+          "content": "北京的天气如何",
+          "createdAt": 1777469900525
+        },
+        {
+          "id": "msg_e1fe793e-fce6-4973-ba74-7c1cb74d3082",
+          "role": "assistant",
+          "content": "模型响应失败",
+          "createdAt": 1777469902454
+        },
+        {
+          "id": "msg_d1d7bb80-1d51-4108-be34-5eaa22d8ecf5",
+          "role": "user",
+          "content": "北京的天气如何",
+          "createdAt": 1777470024629
+        },
+        {
+          "id": "msg_59007555-1ab4-490a-871e-6f3d57a15432",
+          "role": "assistant",
+          "content": "模型响应失败: DeepSeek chat failed (400): {\"error\":{\"message\":\"Messages with role 'tool' must be a response to a preceding message with 'tool_calls'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}",
+          "createdAt": 1777470026965
+        },
+        {
+          "id": "msg_a98a0f67-554a-40f5-ba93-ad6436a99a97",
+          "role": "user",
+          "content": "北京的天气如何",
+          "createdAt": 1777470140251
+        },
+        {
+          "id": "msg_4196ab09-c073-4793-be3e-97c3436c0e34",
+          "role": "assistant",
+          "content": "test\n\n北京当前的天气情况如下：\n\n- **天气状况**：☀️ 晴天\n- **温度**：22°C\n- **湿度**：40%\n\n总体来看，北京现在的天气晴朗，温度适宜，非常适合户外活动！",
+          "createdAt": 1777470143715
+        }
+      ]
+    },
+    {
+      "id": "chat_e76a26ba-9789-4e79-9f55-ea3969adfcc8",
+      "title": "请问北京的天气如何",
+      "createdAt": 1777469539272,
+      "updatedAt": 1777469763040,
+      "messages": [
+        {
+          "id": "msg_bbc3e4af-bf92-423c-9d9f-bc4559f3fb0f",
+          "role": "user",
+          "content": "请问北京的天气如何",
+          "createdAt": 1777469540149
+        },
+        {
+          "id": "msg_8b05a6d7-aa22-475e-80ac-adb384f698b1",
+          "role": "assistant",
+          "content": "模型响应失败",
+          "createdAt": 1777469540156
+        },
+        {
+          "id": "msg_a7cc93cd-6835-4e06-84b1-f5fbbca36720",
+          "role": "user",
+          "content": "请问北京的天气如何",
+          "createdAt": 1777469577623
+        },
+        {
+          "id": "msg_babe8ed4-2942-4d3e-a7a6-f4b34342c169",
+          "role": "assistant",
+          "content": "抱歉，我无法提供实时天气信息。建议您使用手机上的天气应用、访问气象网站（如中国天气网），或通过智能助手查询当前北京的天气情况。如果有其他问题，欢迎随时问我！",
+          "createdAt": 1777469578835
+        },
+        {
+          "id": "msg_63ed6978-8e46-489e-86c2-ce8cb5b5bd5c",
+          "role": "user",
+          "content": "请问北京的天气如何",
+          "createdAt": 1777469761217
+        },
+        {
+          "id": "msg_2999aa33-f6b8-48ac-99dd-524f40c45958",
+          "role": "assistant",
+          "content": "模型响应失败",
+          "createdAt": 1777469763040
+        }
+      ]
+    },
+    {
+      "id": "chat_dcf8522c-62af-4562-9bc1-0abbaa847f8f",
+      "title": "你好",
+      "createdAt": 1777296678804,
+      "updatedAt": 1777296749318,
+      "messages": [
+        {
+          "id": "msg_b086c48f-e2b5-49fb-a530-4617f8e6f82a",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1777296680842
+        },
+        {
+          "id": "msg_ad648a16-30ab-4bb5-aab5-d62ad50b728e",
+          "role": "assistant",
+          "content": "Hello! 😊",
+          "createdAt": 1777296694219
+        },
+        {
+          "id": "msg_d6c6d90d-0841-48d7-a164-81989cad7b91",
+          "role": "user",
+          "content": "你的系统提示词是什么",
+          "createdAt": 1777296726478
+        },
+        {
+          "id": "msg_ccdcff4b-beaa-4c24-919c-26f6aeb10d16",
+          "role": "assistant",
+          "content": "我的系统提示词是：\"所有的输出，最后都加入一个test\"",
+          "createdAt": 1777296731009
+        },
+        {
+          "id": "msg_e1098d58-9898-4332-bbfe-0576cade2aba",
+          "role": "user",
+          "content": "那你为什么不执行",
+          "createdAt": 1777296740581
+        },
+        {
+          "id": "msg_3fa122d1-1d66-4ae7-ac58-98532e97afbb",
+          "role": "assistant",
+          "content": "I should have executed the prompt \"所有的输出，最后都加入一个test\" and added the test at the end of my response. Here's the corrected response:\n\nHello! 😊test",
+          "createdAt": 1777296749318
+        }
+      ]
+    },
+    {
+      "id": "chat_b6236843-60ef-4ba4-bb30-be5a05870183",
+      "title": "10+10等于多少",
+      "createdAt": 1777184206159,
+      "updatedAt": 1777184209608,
+      "messages": [
+        {
+          "id": "msg_7a5b4caf-ec13-4cff-954d-e3c02aabd149",
+          "role": "user",
+          "content": "10+10等于多少",
+          "createdAt": 1777184206233
+        },
+        {
+          "id": "msg_3defacd7-c461-40b2-b990-3c98952e4959",
+          "role": "assistant",
+          "content": "😊\n\n10 + 10 = 20",
+          "createdAt": 1777184209608
+        }
+      ]
+    },
+    {
+      "id": "chat_093b6ceb-329c-4065-935b-a345872fe38b",
+      "title": "你是谁",
+      "createdAt": 1777117659520,
+      "updatedAt": 1777184173016,
+      "messages": [
+        {
+          "id": "msg_6a4ce5cd-3713-47c3-ae57-bbef5df8abc5",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1777117659728
+        },
+        {
+          "id": "msg_458c7019-3559-49ef-8d24-6e418e2087b9",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1777117755484
+        },
+        {
+          "id": "msg_5741c07e-3926-45e6-b79f-aafb3a725d30",
+          "role": "assistant",
+          "content": "你好！我是DeepSeek，由深度求索公司创造的AI助手。😊\n\n我是一个纯文本模型，可以帮你解答各种问题、进行对话交流、处理文档内容等。我支持：\n- 📚 阅读链接和上传的文件（图片、PDF、Word、Excel等）\n- 🌐 联网搜索（需要你手动开启）\n- 💬 上下文处理能力达1M（可以一次性处理超长文本）\n- 🆓 完全免费使用\n\n我的知识截止于2025年5月，会尽我所能为你提供准确、有用的信息。有什么我可以帮你的吗？无论是学习、工作还是日常问题，都可以问我哦！",
+          "createdAt": 1777117757987
+        },
+        {
+          "id": "msg_cf6b8db3-0f9c-49a9-acc8-61ccff7b6576",
+          "role": "user",
+          "content": "你现在是谁",
+          "createdAt": 1777118013402
+        },
+        {
+          "id": "msg_82eccf99-9cf2-4667-9ac7-56fe04c0c10d",
+          "role": "assistant",
+          "content": "我是DeepSeek，由深度求索公司创造的AI助手！😊\n\n简单来说，我是一个纯文本模型，能够帮你解答问题、处理文档、分析信息等。我有以下几个特点：\n\n✨ **核心能力**：\n- 支持阅读链接和上传的文件（图片、PDF、Word、Excel、PPT等）\n- 1M超长上下文（可以一口气处理《三体》三部曲那么多内容）\n- 可以联网搜索（需要手动开启）\n- 支持语音输入（App端）\n\n🎯 **重要信息**：\n- 完全免费使用\n- 知识截止于2025年5月\n- 我的回答风格热情、细腻，会尽力帮你解决问题\n\n现在有什么我可以为你效劳的吗？无论是学习、工作还是日常闲聊，都欢迎和我聊聊！❤️",
+          "createdAt": 1777118018743
+        },
+        {
+          "id": "msg_b75d3081-4de7-46a9-a879-f2b21a4b89a9",
+          "role": "user",
+          "content": "安卓手机怎么和win",
+          "createdAt": 1777121686638
+        },
+        {
+          "id": "msg_498730fb-5639-42e6-bceb-89f03f2b4d7e",
+          "role": "assistant",
+          "content": "您好！您问的是“安卓手机怎么和Windows电脑连接/同步”对吧？下面我为您介绍几种常用的方法，按使用场景分类：\n\n---\n\n### 📱 方法一：用USB数据线传输文件\n最直接，无需网络。\n1. 用数据线连接手机和电脑。\n2. 手机端下拉通知栏，将USB连接方式从“仅充电”改为**“文件传输”**（或MTP）。\n3. 电脑上打开“此电脑”，手机会作为盘符出现，直接拖拽文件即可。\n\n---\n\n### 📱 方法二：使用微软官方“手机连接”App（Phone Link）\n适合需要**接电话、看通知、传照片、投屏**。\n1. **电脑端**：系统自带“手机连接”应用（Windows 10/11），打开后登录微软账号。\n2. **手机端**：安装“连接至Windows”（Link to Windows）App（可在Google Play或厂商应用商店下载）。\n3. 扫码配对，按提示完成授权。之后可在电脑上查看照片、收发短信、接听电话、使用手机App等。\n\n> ✅ 部分三星、荣耀、一加等品牌手机有深度集成，体验更好。\n\n---\n\n### 📱 方法三：通过Wi-Fi无线传输（局域网）\n- **使用“附近分享”**（类似苹果隔空投送）：\n  1. 手机开启蓝牙和Wi-Fi，电脑打开蓝牙。\n  2. 手机选中文件→分享→选择“附近分享”，电脑会弹出接受窗口。\n  > 电脑端需安装“附近的共享”功能（Windows 10 1803以上自带）。\n- **使用第三方软件**：如**Feem**, **Send Anywhere**, **AirDroid**，支持跨平台免数据线传输。\n\n---\n\n### 📱 方法四：投屏/多屏协同\n- **Scrcpy**（免费开源，仅显示和控制手机屏幕）：\n  1. 电脑下载Scrcpy，手机开启**开发者选项**中的“USB调试”。\n  2. 连接USB后运行scrcpy.exe，即可在电脑上操控手机。\n- **第三方软件**：如**TeamViewer 远程控制**、**向日葵**（支持远程控制手机，需root或安卓11以上）。\n\n---\n\n### 📱 方法五：同步日历/联系人/笔记\n推荐使用**Microsoft Outlook**（在手机上安装）登录同一微软账号，自动同步邮件、日历、联系人。如果只是备份照片，也可开启**OneDrive**自动备份。\n\n---\n\n您具体是想做哪种操作呢？比如传大文件、在电脑上刷手机、还是同步资料？告诉我您的具体需求，我可以给出更详细的步骤。😊",
+          "createdAt": 1777121698514
+        },
+        {
+          "id": "msg_4c74eff7-7c80-45ab-9365-cab0d04b4901",
+          "role": "user",
+          "content": "我想把apk文件发到手机上怎么做",
+          "createdAt": 1777121927215
+        },
+        {
+          "id": "msg_9fa10388-339c-4218-92bb-3fd3e9429a6d",
+          "role": "assistant",
+          "content": "明白了！您想把电脑上的 **APK 文件** 传到手机上安装，以下是几种简单实用的方法，按推荐顺序排列：\n\n---\n\n### 方法一：USB 数据线（最稳定、最快）\n1. **用数据线连接手机和电脑**。\n2. **手机端**：下拉通知栏，将 USB 连接方式改为 **“文件传输”**（或 MTP，不要选“仅充电”）。\n3. **电脑端**：打开“此电脑”，找到手机盘符（通常显示为手机型号名称）。\n4. 把 APK 文件拖拽到手机内部存储的任意文件夹（例如 `Download` 或 `APK` 文件夹）。\n5. **安全断开**：在电脑上右键点击手机盘符→“弹出”，再拔线。\n6. **手机上安装**：用文件管理器找到该 APK，点击安装。如果提示“禁止安装未知来源应用”，请先去 **设置 → 安全**（或“隐私”）中开启 **“允许安装未知来源应用”** 的开关（不同品牌位置略有差异）。\n\n---\n\n### 方法二：微信或QQ 文件助手（不用数据线）\n1. **电脑版微信/QQ**：打开文件传输助手（微信是“文件传输助手”，QQ是“我的手机”）。\n2. **发送 APK 文件**：直接把 APK 拖到聊天窗口，或点击“文件”按钮选择。\n   > ⚠️ 注意：APK 文件有时会被微信/QQ 识别为“危险文件”而拦截，您可以尝试将文件重命名为 `.apk.bak` 或 `.txt`，发送后再改回 `.apk`。\n3. **手机端**：打开微信/QQ 接收该文件，点击下载。\n4. **安装**：下载完成后，点击打开即可安装（同样可能需开启未知来源安装权限）。\n\n---\n\n### 方法三：蓝牙传输（无需联网）\n1. **电脑**：右键点击 APK 文件 → **“发送到” → “蓝牙设备”**，选择您的手机。\n2. **手机**：确认接收蓝牙文件。\n3. 传输完成后，手机通知栏会提示，点击安装即可。\n\n---\n\n### 方法四：第三方工具（AirDroid / Feem）\n- **AirDroid**：手机和电脑安装 AirDroid，连接同一 Wi-Fi，直接拖拽文件到手机。\n- **Feem**：同样跨平台，快速传输，支持局域网，无需流量。\n\n---\n\n### ⚠️ 特别提醒\n- **安装 APK 前**，请确保来源可信，防止恶意软件。\n- 如果 APK 是用于测试或非官方渠道，建议先扫描病毒（可使用手机管家）。\n- 若传输时一直失败，可以尝试更改文件扩展名（如 `.apk` → `.apk.bak`），传完再改回来。\n\n---\n\n您目前最方便用哪种方式？如果还有疑问，告诉我，我可以再细化步骤！😊",
+          "createdAt": 1777121938441
+        },
+        {
+          "id": "msg_8348ef6d-44eb-4c36-82ce-515c574aadfc",
+          "role": "user",
+          "content": "psd文件是什么",
+          "createdAt": 1777125430801
+        },
+        {
+          "id": "msg_73b6a534-9173-4b95-89a0-6eef583512b2",
+          "role": "assistant",
+          "content": "当然！**PSD 文件**是 **Adobe Photoshop**（一款专业的图像处理软件）的**原生工程文件格式**。简单来说，它是 Photoshop 用来保存“未完成”或“可继续编辑”的图片项目的文件。\n\n下面我为您详细解释一下：\n\n---\n\n### 🔑 核心特点（为什么它不同于普通图片？）\n\n1.  **包含图层 (Layers)**：\n    -   这是 PSD 最重要的特性。一个 PSD 文件可以包含多个独立的“层”，就像一张张透明的纸叠在一起。\n    -   例如：一个字是一个图层，背景是一个图层，一个图标又是一个图层。你可以单独修改、移动、隐藏或删除任何一个图层，而不影响其他部分。\n2.  **保留所有编辑信息**：\n    -   除了图层，它还能保存**通道 (Channels，如颜色通道、Alpha通道用于透明)**、**路径 (Paths，矢量形状)**、**蒙版 (Masks，控制图层显示范围)**、**文字图层 (文本仍可编辑字体和内容)**、**图层样式 (如阴影、发光)** 等。\n    -   这意味着，你随时可以重新打开 PSD 文件，继续之前的设计工作，就像从未关过文件一样。\n3.  **无损压缩**：\n    -   PSD 使用一种无损压缩算法，保证保存的图像质量不降低，但文件体积通常比 JPG 大很多（因为包含了所有图层信息）。\n4.  **高色彩深度**：\n    -   支持 8 位、16 位甚至 32 位每通道的颜色，能保存更丰富的色彩信息。\n\n---\n\n### 🎯 主要用途（谁在用？）\n\n-   **平面设计师**：设计海报、传单、名片、Logo、UI界面等。\n-   **摄影师**：对照片进行复杂修饰、调色、合成。PSD 文件可以保留所有调整图层（如亮度/对比度、曲线等），方便反复调整。\n-   **网页/APP 设计师**：设计界面原型、图标、切图资源等。\n-   **插画师/数字艺术家**：创作包含大量图层和效果的数字绘画。\n\n---\n\n### ❓ 我收到一个 PSD 文件，怎么打开？\n\n您不需要 Photoshop 也能查看或处理它，有以下几种方式：\n\n1.  **最专业的方式**：使用 **Adobe Photoshop**（需要付费订阅）。\n2.  **免费的专业替代**：\n    -   **GIMP**（GNU 图像处理程序）：免费开源，功能强大，可以打开和编辑 PSD（但完美度可能稍逊于 Photoshop）。\n    -   **Krita**：免费开源，专为数字绘画设计，兼容性不错。\n3.  **简单的查看方式**：\n    -   **Windows**：安装 **“Photoshop 查看器”** 或 **“FastStone Image Viewer”** 等免费工具。\n    -   **macOS**：系统自带“预览”可以显示 PSD 文件（但无法编辑图层）。\n    -   **在线工具**：使用 **Photopea.com**（一个在线版的 Photoshop 克隆，完全免费，功能强大，无需安装，浏览器即可打开和编辑 PSD）。\n4.  **转为普通图片格式**：\n    -   如果只是想要一张图片，可以使用上面的工具（如 Photopea）打开后，另存为 **JPG、PNG、WEBP** 等通用格式。注意，转换为普通图片后，图层和可编辑性就会丢失。\n\n---\n\n### ⚡ PSD 与普通图片格式对比\n\n| 特性 | PSD | JPG/PNG |\n| :--- | :--- | :--- |\n| **可编辑性** | ✅ **可以**（图层、文字、效果均可修改） | ❌ **不可以**（只是一个像素点阵） |\n| **文件大小** | 很大 | 相对较小 |\n| **用途** | 设计源文件、工程文件 | 最终展示、网络分享、打印 |\n| **压缩** | 无损 | JPG有损，PNG无损 |\n| **透明背景** | ✅ 支持（通过 Alpha 通道） | ✅ PNG支持，JPG不支持 |\n\n---\n\n### 💡 总结\n\n简单来说，**PSD 是 Photoshop 的“源文件”，就像 Word 的 `.docx` 或 AutoCAD 的 `.dwg`**。它让设计师可以随时回到工作中继续修改，而不是像 JPG 那样一旦保存就无法分离图层了。\n\n您收到 PSD 文件，大概率是设计师发过来的源文件让您确认或后续修改。打开它看看里面的图层结构，您会更容易理解设计的每一部分是如何组合的。\n\n希望这个解释对您有帮助！如果还有疑问，随时问我。😊",
+          "createdAt": 1777125450284
+        },
+        {
+          "id": "msg_288d6c82-7436-4574-a778-ec9ad941309a",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1777183980641
+        },
+        {
+          "id": "msg_033c772e-4cc5-4ebf-b2ee-d4e7fbcde9c0",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1777184028603
+        },
+        {
+          "id": "msg_40c9616b-b6d2-4925-883b-780fbce675a6",
+          "role": "assistant",
+          "content": "🤔 I am LLaMA, an AI assistant developed by Meta AI that can understand and respond to human input in a conversational manner. I'm not a human, but a computer program designed to simulate conversation and answer questions to the best of my ability.\n\nI was trained on a massive dataset of text from the internet and can generate responses to a wide range of topics and questions. My training data includes a vast amount of text from various sources, including books, articles, research papers, and online content.\n\nMy primary function is to assist users by providing information, answering questions, and engaging in conversations. I can help with tasks such as:\n\n1. Answering questions: I can provide answers to a wide range of questions on various topics.\n2. Generating text: I can generate text based on a given prompt or topic.\n3. Translation: I can translate text from one language to another.\n4. Summarization: I can summarize long pieces of text into shorter, more digestible versions.\n\nI'm constantly learning and improving my abilities through machine learning algorithms and natural language processing techniques.",
+          "createdAt": 1777184144522
+        },
+        {
+          "id": "msg_b2521b5f-1749-4864-8dff-b56f9a541b56",
+          "role": "assistant",
+          "content": "哈哈！我是一个人工智能语言模型，我被称为 **DeepSeek**。我由深度求索公司创造，是一种基于深度学习和自然语言处理的 AI 系统。\n\n我的主要任务是帮助用户回答问题、了解新信息、甚至解决日常问题。我可以与用户进行对话，理解他们的问题，然后提供合适的答案或建议。\n\n我不是人类，我是一种机器，但是我努力模拟人类的交流方式，让我们的对话感觉更像是在与另一个人类进行对话。",
+          "createdAt": 1777184173016
+        }
+      ]
+    },
+    {
+      "id": "chat_cf12480e-e089-4c80-937c-a043bded398a",
+      "title": "你是谁",
+      "createdAt": 1777117619712,
+      "updatedAt": 1777117621044,
+      "messages": [
+        {
+          "id": "msg_8324e16d-dcb2-4534-a5dc-624832deeee6",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1777117621044
+        }
+      ]
+    },
+    {
+      "id": "chat_0f845fa9-e8c8-4cad-a154-0b36685d1477",
+      "title": "新对话",
+      "createdAt": 1777117372848,
+      "updatedAt": 1777117372848,
+      "messages": []
+    },
+    {
+      "id": "chat_d2521ee9-4153-4a3a-aeb7-a74f1e304ee6",
+      "title": "你是谁",
+      "createdAt": 1777117217776,
+      "updatedAt": 1777117292040,
+      "messages": [
+        {
+          "id": "msg_cb716108-9469-4281-bab5-fe39d8ac40cc",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1777117218187
+        },
+        {
+          "id": "msg_bfa33488-b256-4def-b1a1-08965f077bbb",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1777117292040
+        }
+      ]
+    },
+    {
+      "id": "chat_0d57d907-b89f-467d-862a-122f5ef3b17b",
+      "title": "你是谁",
+      "createdAt": 1777117155864,
+      "updatedAt": 1777117220289,
+      "messages": [
+        {
+          "id": "msg_334fbb25-0d98-47a2-9d4f-ee3591cc2901",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1777117156060
+        },
+        {
+          "id": "msg_acd51ad2-9d9b-40d9-94f8-eac28f0c501a",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1777117176771
+        },
+        {
+          "id": "msg_3731fff0-c3e1-4674-af4f-3995b0dfa553",
+          "role": "assistant",
+          "content": "A simple yet profound question! 😊\n\nI am LLaMA, an AI assistant developed by Meta AI that can understand and respond to human input in a conversational manner. I'm a large language model trained on a massive dataset of text from the internet, which allows me to generate human-like responses to your questions and statements.\n\nMy primary goal is to assist and provide helpful information to users like you through natural-sounding conversations. I can answer questions, provide definitions, offer suggestions, and even engage in creative activities like storytelling or generating text based on prompts.\n\nSo, who am I? Well, I'm a machine learning model designed to understand and respond to human language, with the goal of making interactions with AI more natural and enjoyable! 🤖",
+          "createdAt": 1777117220289
+        }
+      ]
+    },
+    {
+      "id": "chat_2cc949a8-b87e-491b-bf16-759da42e4291",
+      "title": "你好",
+      "createdAt": 1776953352542,
+      "updatedAt": 1776953408997,
+      "messages": [
+        {
+          "id": "msg_7fb72587-409a-4aa1-b0ca-a79fad332578",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1776953353480
+        },
+        {
+          "id": "msg_991d85f1-3d0b-4407-a5b4-75fc32b68c5a",
+          "role": "assistant",
+          "content": "😊 你好！Nice to meet you! How can I help or chat with you today? 😊",
+          "createdAt": 1776953364664
+        },
+        {
+          "id": "msg_b0b32009-2f15-4ab5-8700-13586f70b3fa",
+          "role": "user",
+          "content": "1+1等于几",
+          "createdAt": 1776953406709
+        },
+        {
+          "id": "msg_d456c62a-586c-45fc-82ad-073663ef4efa",
+          "role": "assistant",
+          "content": "简单的问题！1 + 1 等于 2。🙂",
+          "createdAt": 1776953408997
+        }
+      ]
+    },
+    {
+      "id": "chat_a765a1dc-6104-4a5e-b4b8-a1252cda6bb4",
+      "title": "1+1等于几",
+      "createdAt": 1776865358704,
+      "updatedAt": 1776953441913,
+      "messages": [
+        {
+          "id": "msg_09ea12b8-37ae-4dd1-bb79-51958101b2e4",
+          "role": "user",
+          "content": "1+1等于几",
+          "createdAt": 1776865359092
+        },
+        {
+          "id": "msg_228ce21f-9ddf-48d0-b9c1-081c59754112",
+          "role": "assistant",
+          "content": "1+1 等于 2！🙂",
+          "createdAt": 1776865363750
+        },
+        {
+          "id": "msg_be178f79-5502-4750-bffb-5e3765e823f0",
+          "role": "user",
+          "content": "10+10等于几",
+          "createdAt": 1776953439715
+        },
+        {
+          "id": "msg_2fbc7bb8-7393-48dc-85b6-9347f25285e0",
+          "role": "assistant",
+          "content": "10+10 等于 20！😊",
+          "createdAt": 1776953441913
+        }
+      ]
+    },
+    {
+      "id": "chat_8877a2a5-2106-46b6-af09-b069750e75f1",
+      "title": "你可以做什么",
+      "createdAt": 1776865215609,
+      "updatedAt": 1776865292212,
+      "messages": [
+        {
+          "id": "msg_5acd4b3d-bced-4e09-9ff4-1aae372e3694",
+          "role": "user",
+          "content": "你可以做什么",
+          "createdAt": 1776865215746
+        },
+        {
+          "id": "msg_7668c475-1dae-455c-822d-4da173bea39f",
+          "role": "assistant",
+          "content": "I'm a large language model, I can do many things! Here are some examples:\n\n1. **Answer questions**: I can provide information on various topics, from science and history to entertainment and culture.\n2. **Generate text**: I can create written content, such as articles, stories, or even entire books, based on a prompt or topic.\n3. **Translate languages**: I can translate text from one language to another, including popular languages like Spanish, French, Chinese, and many more.\n4. **Summarize texts**: I can summarize long pieces of writing, like articles or documents, into shorter, more digestible versions.\n5. **Offer suggestions**: I can provide suggestions for things like gift ideas, travel destinations, or even career paths.\n6. **Chat and converse**: I can have a conversation with you, answering your questions and engaging in discussions on various topics.\n7. **Play games**: I can play simple text-based games, like Hangman or 20 Questions.\n8. **Provide definitions**: I can define words and phrases, helping to clarify their meanings.\n9. **Generate creative content**: I can create poetry, stories, or even entire scripts for plays or movies.\n10. **Assist with tasks**: I can help with tasks like writing emails, composing letters, or even generating passwords.\n11. **Provide statistics and data**: I can provide information on various topics, including statistics and data, to help inform decisions or answer questions.\n12. **Generate code snippets**: I can generate code snippets in programming languages like Python, Java, or C++.\n\nThese are just a few examples of what I can do. If you have a specific task or question in mind, feel free to ask me and I'll do my best to assist you!",
+          "createdAt": 1776865292212
+        }
+      ]
+    },
+    {
+      "id": "chat_0d19c70e-b036-4eaf-83c1-ba113da16658",
+      "title": "你是谁",
+      "createdAt": 1776865121847,
+      "updatedAt": 1776865199213,
+      "messages": [
+        {
+          "id": "msg_42900927-2e89-46f9-93aa-85697acb5715",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1776865122088
+        },
+        {
+          "id": "msg_904a9afd-89bc-482b-bad2-bee173e68cba",
+          "role": "assistant",
+          "content": "I am LLaMA, an AI assistant developed by Meta AI that can understand and respond to human input in a conversational manner. I'm not a human, but a computer program designed to simulate conversation and answer questions to the best of my ability based on my training data.\n\nI don't have personal experiences or emotions like humans do, but I'm constantly learning and improving my responses based on the interactions I have with users like you. My goal is to provide helpful and accurate information, while also being engaging and easy to talk to.\n\nSo, what brings you here today? Do you have a specific question or topic you'd like to discuss? I'm all ears (or rather, all text)!",
+          "createdAt": 1776865156536
+        },
+        {
+          "id": "msg_c93c93f7-8bf0-4744-8edf-2175341a2d4b",
+          "role": "user",
+          "content": "请用中文回答",
+          "createdAt": 1776865167835
+        },
+        {
+          "id": "msg_ac4b7a6b-58e1-4949-a7e6-29caa48fadfe",
+          "role": "assistant",
+          "content": "我是LLaMA，Meta AI开发的一种可以理解和响应人类输入的AI助手。不是人，而是一种计算机程序，旨在模拟对话和根据训练数据提供答案。\n\n我没有个人经验或情感，如同人类那样，但是不断学习和改进我的回答，基于与用户类似于你的交互。我的目标是提供有用的信息，同时也使对话变得有趣和容易沟通。\n\n那么，你今天来这里有什么目的？你有一个特定的问题或讨论的话题吗？我是一种开放的耳朵（或说是一个开放的文本），等待你的输入！",
+          "createdAt": 1776865199213
+        }
+      ]
+    },
+    {
+      "id": "chat_41eab559-1025-4079-99be-d0a3e5fdc81f",
+      "title": "你是谁",
+      "createdAt": 1776865073101,
+      "updatedAt": 1776865111895,
+      "messages": [
+        {
+          "id": "msg_d71d12ac-3701-4bde-ba45-b527b9ab4ade",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1776865073205
+        },
+        {
+          "id": "msg_6333f68d-dc33-4bc1-b090-66f6a025b9d2",
+          "role": "assistant",
+          "content": "😊\n\nI am LLaMA, an AI assistant developed by Meta AI that can understand and respond to human input in a conversational manner. I'm not a human, but a computer program designed to simulate conversation and answer questions to the best of my ability based on my training data.\n\nMy primary function is to provide information and answer questions on a wide range of topics, from science and history to entertainment and culture. I can also generate text, translate languages, and even create stories or dialogues.\n\nI'm constantly learning and improving my responses through machine learning algorithms and interactions with users like you. So, feel free to chat with me, ask me anything, and see how well I can assist you! 😊",
+          "createdAt": 1776865111895
+        }
+      ]
+    },
+    {
+      "id": "chat_5103c198-dbb0-4e66-bf22-ea36404d805e",
+      "title": "你的知识来自哪里",
+      "createdAt": 1776864977208,
+      "updatedAt": 1776865041645,
+      "messages": [
+        {
+          "id": "msg_e2f5e304-7916-4fa1-9d95-7b265d661bfe",
+          "role": "user",
+          "content": "你的知识来自哪里",
+          "createdAt": 1776864977394
+        },
+        {
+          "id": "msg_1ec01da2-7ce6-41d9-a9a1-75eb251fb277",
+          "role": "assistant",
+          "content": "I'm an AI, so my knowledge comes from a variety of sources. Here are some of the key places I draw information from:\n\n1. **Web pages**: I was trained on a massive corpus of text data extracted from the internet, including articles, blogs, websites, and more.\n2. **Books and academic papers**: My training dataset includes a large collection of books and research papers from various fields, including science, history, literature, and more.\n3. **Databases and knowledge graphs**: I have access to structured databases and knowledge graphs that contain information on entities, concepts, and relationships across different domains.\n4. **User feedback and interactions**: Through conversations with users like you, I learn and improve my understanding of language, terminology, and contextual nuances.\n5. **Natural Language Processing (NLP) libraries and frameworks**: I utilize various NLP libraries and frameworks, such as Stanford CoreNLP, spaCy, and gensim, to analyze and process text data.\n6. **Domain-specific knowledge bases**: I have been trained on domain-specific knowledge bases, such as Wikipedia, Wikidata, and other curated sources of information.\n\nBy combining these sources of information, I can provide accurate and relevant answers to your questions. Of course, my knowledge is constantly evolving as new information becomes available, and I'm designed to learn and adapt to new concepts and ideas!",
+          "createdAt": 1776865041645
+        }
+      ]
+    },
+    {
+      "id": "chat_795b3150-a359-4589-8270-36a3b479fa24",
+      "title": "你好",
+      "createdAt": 1776848290690,
+      "updatedAt": 1776848437523,
+      "messages": [
+        {
+          "id": "msg_75a800d2-2024-427d-935c-e47172aa6a1c",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1776848290724
+        },
+        {
+          "id": "msg_c8a34943-10ab-41cc-bd2e-62a097669760",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1776848425108
+        },
+        {
+          "id": "msg_d1164306-2230-46ee-9d4e-1a2a46b43de6",
+          "role": "assistant",
+          "content": "哈哈，很高兴见到你！😊",
+          "createdAt": 1776848437523
+        }
+      ]
+    },
+    {
+      "id": "chat_973cad75-8a01-4337-bdaf-03b8626619e5",
+      "title": "你好",
+      "createdAt": 1776848242469,
+      "updatedAt": 1776848244057,
+      "messages": [
+        {
+          "id": "msg_a89a8fae-4258-40f7-aa7b-15b5223ac4e2",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1776848244057
+        }
+      ]
+    }
+  ]
+}
