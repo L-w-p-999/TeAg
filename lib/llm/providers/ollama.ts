@@ -1,4 +1,5 @@
 import type { LLMChatRequest, LLMChatResponse, LLMProvider } from "../types";
+import { normalizeMessages } from "../normalize";
 
 type OllamaChatRequest = {
   model: string;
@@ -22,7 +23,9 @@ export class OllamaProvider implements LLMProvider {
     const url = new URL("/api/chat", this.opts.baseUrl);
     const payload: OllamaChatRequest = {
       model: req.model,
-      messages: req.messages,
+      messages: normalizeMessages(req.messages).flatMap((message) =>
+        typeof message.content === "string" ? [{ role: message.role, content: message.content }] : [],
+      ),
       stream: false,
     };
 
@@ -41,7 +44,6 @@ export class OllamaProvider implements LLMProvider {
     const data = (await res.json()) as OllamaChatResponse;
     const content = data.message?.content ?? data.response ?? "";
 
-    return { content };
+    return { content, stop_reason: "end_turn" };
   }
 }
-

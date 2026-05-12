@@ -3,14 +3,15 @@ import { appendMessage, getChat } from "@/lib/chat/store";
 import { getLLMModel, getLLMProvider } from "@/lib/llm";
 import type { LLMMessage } from "@/lib/llm/types";
 import { agentRun } from "@/lib/agent/runner";
+import { getSystemPrompt } from "@/lib/system-prompt/cache";
 
 export async function POST(req: Request, ctx: { params: Promise<{ chatId: string }> }) {
   const { chatId } = await ctx.params;
   const body = (await req.json().catch(() => null)) as
     | null
-    | { content?: string; provider?: string; model?: string; systemPrompt?: string };
+    | { content?: string; provider?: string; model?: string };
   const content = body?.content?.trim() ?? "";
-  const systemPrompt = body?.systemPrompt?.trim() ?? "";
+  const systemPrompt = await getSystemPrompt();
   if (!content) {
     return NextResponse.json({ error: "empty_content" }, { status: 400 });
   }
@@ -43,6 +44,7 @@ export async function POST(req: Request, ctx: { params: Promise<{ chatId: string
       provider,
       model,
       systemPrompt,
+      { chatId },
     );
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

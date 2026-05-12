@@ -1,6 +1,7 @@
 import type { ToolDefinition } from "@/lib/llm/types";
+import type { AgentTool } from "./types";
 
-export const weatherToolDefinition: ToolDefinition = {
+const weatherToolDefinition: ToolDefinition = {
   name: "get_weather",
   description: "查询指定城市的当前天气情况，包括温度、天气状况和湿度",
   parameters: {
@@ -15,7 +16,7 @@ export const weatherToolDefinition: ToolDefinition = {
   },
 };
 
-export async function executeWeatherTool(args: Record<string, unknown>): Promise<string> {
+async function executeWeatherTool(args: Record<string, unknown>): Promise<string> {
   const city = String(args.city ?? "未知");
 
   // 实际项目里这里换成真实天气 API，比如 OpenWeatherMap
@@ -37,6 +38,7 @@ export async function executeWeatherTool(args: Record<string, unknown>): Promise
   });
 }
 
-export const toolRegistry: Record<string, (args: Record<string, unknown>) => Promise<string>> = {
-  get_weather: executeWeatherTool,
+export const weatherTool: AgentTool = {
+  definition: weatherToolDefinition,
+  handler: executeWeatherTool,
 };

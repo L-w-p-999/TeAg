@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export type ModelOption = {
   label: string;
@@ -21,7 +21,7 @@ type ModelContextValue = {
   systemPrompt: string;
   draftSystemPrompt: string;
   setDraftSystemPrompt: (value: string) => void;
-  applySystemPrompt: () => void;
+  applySystemPrompt: () => Promise<void>;
   rightSidebarOpen: boolean;
   setRightSidebarOpen: (open: boolean) => void;
 };
@@ -32,7 +32,7 @@ const ModelContext = createContext<ModelContextValue>({
   systemPrompt: "",
   draftSystemPrompt: "",
   setDraftSystemPrompt: () => {},
-  applySystemPrompt: () => {},
+  applySystemPrompt: async () => {},
   rightSidebarOpen: true,
   setRightSidebarOpen: () => {},
 });
@@ -49,9 +49,46 @@ export function ModelProvider({ children }: { children: React.ReactNode }) {
     return window.localStorage.getItem("my-chatgpt-system-prompt") ?? "";
   });
 
-  const applySystemPrompt = () => {
-    setSystemPrompt(draftSystemPrompt);
-    window.localStorage.setItem("my-chatgpt-system-prompt", draftSystemPrompt);
+  useEffect(() => {
+    const syncSystemPrompt = async () => {
+      const localSystemPrompt = window.localStorage.getItem("my-chatgpt-system-prompt")?.trim() ?? "";
+      const res = await fetch("/api/system-prompt", { cache: "no-store" });
+      if (!res.ok) return;
+
+      const data = (await res.json()) as { systemPrompt?: string };
+      const serverSystemPrompt = data.systemPrompt?.trim() ?? "";
+      if (serverSystemPrompt) {
+        setSystemPrompt(serverSystemPrompt);
+        setDraftSystemPrompt(serverSystemPrompt);
+        window.localStorage.setItem("my-chatgpt-system-prompt", serverSystemPrompt);
+        return;
+      }
+
+      if (!localSystemPrompt) return;
+
+      await fetch("/api/system-prompt", {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ systemPrompt: localSystemPrompt }),
+      });
+    };
+
+    void syncSystemPrompt();
+  }, []);
+
+  const applySystemPrompt = async () => {
+    const nextSystemPrompt = draftSystemPrompt.trim();
+    setSystemPrompt(nextSystemPrompt);
+    window.localStorage.setItem("my-chatgpt-system-prompt", nextSystemPrompt);
+
+    const res = await fetch("/api/system-prompt", {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ systemPrompt: nextSystemPrompt }),
+    });
+    if (!res.ok) {
+      throw new Error(await res.text());
+    }
   };
 
   return (

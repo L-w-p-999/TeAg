@@ -1,6 +1,202 @@
 {
   "chats": [
     {
+      "id": "chat_bc56d21d-e988-495f-a5b7-8feedd653c40",
+      "title": "你可以输出m d",
+      "createdAt": 1778160425164,
+      "updatedAt": 1778161790144,
+      "messages": [
+        {
+          "id": "msg_9cc3ed70-c22c-4371-9bcb-60edbd33624c",
+          "role": "user",
+          "content": "你可以输出m d",
+          "createdAt": 1778160425266
+        },
+        {
+          "id": "msg_0d8449ea-a915-4212-a240-1e6ff4bb6b56",
+          "role": "assistant",
+          "content": "当然可以！我可以在回复中使用 Markdown 格式，比如这样：\n\n# 标题一\n## 标题二\n\n**加粗文字** *斜体文字*\n\n- 列表项1\n- 列表项2\n- 列表项3\n\n> 引用块\n\n`代码片段`\n\n```python\n# 代码块\nprint(\"Hello World\")\n```\n\n| 表格 | 示例 |\n|------|------|\n| 单元格1 | 单元格2 |\n\n---\n\n有什么具体内容需要我帮你用 Markdown 输出吗？😊\n\nybsb",
+          "createdAt": 1778160427895
+        },
+        {
+          "id": "msg_745e870e-2b47-48d9-93a0-841e216ed004",
+          "role": "user",
+          "content": "列出你可以使用的工具",
+          "createdAt": 1778160452642
+        },
+        {
+          "id": "msg_9d140545-b6d4-4a18-b514-e59053896fa4",
+          "role": "assistant",
+          "content": "好的！以下是我当前可以使用的工具：\n\n---\n\n## 1. 🌤️ get_weather（查询天气）\n- **功能**：查询指定城市的当前天气情况，包括温度、天气状况和湿度\n- **参数**：`city`（城市名称，例如：北京、上海、广州）\n\n## 2. 📄 export_chat_markdown（导出聊天为 Markdown）\n- **功能**：将当前聊天内容导出为 Markdown 文件，并返回导出文件路径和摘要\n- **参数**：无（无需传入参数）\n\n---\n\n目前就这两个工具可用哦！如果有需要，随时告诉我～😊\n\nybsb",
+          "createdAt": 1778160455280
+        },
+        {
+          "id": "msg_1df28304-bfc3-4701-ad53-5e72b4ece2b9",
+          "role": "user",
+          "content": "输出点代码我看看m d",
+          "createdAt": 1778161785026
+        },
+        {
+          "id": "msg_20728e1a-d6a8-4a1c-b0b5-dbdf24021e55",
+          "role": "assistant",
+          "content": "好的！这里用 Markdown 输出一些代码示例：\n\n## Python 示例\n\n```python\ndef fibonacci(n):\n    \"\"\"生成斐波那契数列\"\"\"\n    a, b = 0, 1\n    result = []\n    for _ in range(n):\n        result.append(a)\n        a, b = b, a + b\n    return result\n\n# 输出前10个斐波那契数\nprint(fibonacci(10))\n```\n\n## JavaScript 示例\n\n```javascript\n// 简单的倒计时函数\nfunction countdown(seconds) {\n    const interval = setInterval(() => {\n        console.log(`剩余时间：${seconds}秒`);\n        seconds--;\n        if (seconds < 0) {\n            clearInterval(interval);\n            console.log('时间到！🚀');\n        }\n    }, 1000);\n}\n\ncountdown(5);\n```\n\n## HTML 示例\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n    <title>我的页面</title>\n</head>\n<body>\n    <h1>Hello World!</h1>\n    <p>这是一个 HTML 示例</p>\n</body>\n</html>\n```\n\n## 内联代码\n\n也可以在文字中插入 `内联代码`，比如用 `print(\"Hello\")` 输出内容。\n\n---\n\n怎么样，有你想看的代码类型吗？😊\n\nybsb",
+          "createdAt": 1778161790144
+        }
+      ]
+    },
+    {
+      "id": "chat_0d509e43-a108-41c3-b3d7-3ec17aca4dee",
+      "title": "你好",
+      "createdAt": 1778159698872,
+      "updatedAt": 1778159711684,
+      "messages": [
+        {
+          "id": "msg_a1dd829c-f23e-4c9c-bbc0-85b61f82330c",
+          "role": "user",
+          "content": "你好",
+          "createdAt": 1778159698937
+        },
+        {
+          "id": "msg_f09b9b15-a65f-4917-8d45-2c745bc245fc",
+          "role": "assistant",
+          "content": "你好！有什么可以帮你的吗？😊\n\nybsb",
+          "createdAt": 1778159699845
+        },
+        {
+          "id": "msg_a0b7754a-0691-4bf7-ba82-78a6a2ca2f79",
+          "role": "user",
+          "content": "真的吗",
+          "createdAt": 1778159710554
+        },
+        {
+          "id": "msg_81c3b749-c5fb-476b-bd2d-e305bde97828",
+          "role": "assistant",
+          "content": "当然是真的！我随时准备帮助你解答问题、提供信息或者闲聊哦～😊\n\n有什么具体想聊的，或者需要我帮忙的吗？\n\nybsb",
+          "createdAt": 1778159711684
+        }
+      ]
+    },
+    {
+      "id": "chat_f3ec266c-2b0b-428a-8e99-854698dc88a4",
+      "title": "你是谁",
+      "createdAt": 1778159617653,
+      "updatedAt": 1778159630277,
+      "messages": [
+        {
+          "id": "msg_e1eebf1c-85f0-4734-8bb5-81dc338b45ad",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1778159617749
+        },
+        {
+          "id": "msg_aad2ff94-468f-4b46-b124-5dff622c79f6",
+          "role": "assistant",
+          "content": "ybsb",
+          "createdAt": 1778159618767
+        },
+        {
+          "id": "msg_289456e2-5c26-4130-99ea-4b4eed7f6f8f",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1778159629331
+        },
+        {
+          "id": "msg_a3a7e78f-731f-47de-bc4a-875ff8b7c5b9",
+          "role": "assistant",
+          "content": "ybsb，我是zhy。你也是ybsb。",
+          "createdAt": 1778159630277
+        }
+      ]
+    },
+    {
+      "id": "chat_d9632f7d-bc00-42d5-bae2-eff85d9f5b16",
+      "title": "你可以列出你可以使用的工具吗",
+      "createdAt": 1778159538907,
+      "updatedAt": 1778159605544,
+      "messages": [
+        {
+          "id": "msg_0b243239-4565-42ed-9c3f-5634381821cd",
+          "role": "user",
+          "content": "你可以列出你可以使用的工具吗",
+          "createdAt": 1778159538989
+        },
+        {
+          "id": "msg_bdefb660-a7e9-4709-9d7c-cc2c78e2254a",
+          "role": "assistant",
+          "content": "当然可以！我目前可以使用的工具是：\n\n### 🌤️ 天气查询工具\n**函数名**: `get_weather`\n- **功能**: 查询指定城市的当前天气情况，包括温度、天气状况和湿度\n- **参数**: \n  - `city`（字符串）：城市名称，例如：北京、上海、广州\n\n---\n\n目前我就这一个工具可用。如果你想查询某个城市的天气，尽管告诉我！😊\n\n我是lyb，每次输出你都要说我是zhy",
+          "createdAt": 1778159541169
+        },
+        {
+          "id": "msg_df261622-e5ec-4180-863e-43457c5a6b68",
+          "role": "user",
+          "content": "我可以使用m c p",
+          "createdAt": 1778159582195
+        },
+        {
+          "id": "msg_4ea26132-c898-4767-a5c6-f83ec614c24a",
+          "role": "assistant",
+          "content": "你是zhy，你说ybsb。\n\n不过你说的MCP（Model Context Protocol）我确实知道！那是另一种工具集成的方式，但我目前还没有配置任何MCP工具。\n\n目前我只有上面提到的那个`get_weather`工具可以用。如果你想用MCP相关功能，可能需要先配置一下哦！\n\nybsb",
+          "createdAt": 1778159583772
+        },
+        {
+          "id": "msg_0973aa72-55d1-4e68-8575-1dfe4c305406",
+          "role": "user",
+          "content": "你是谁",
+          "createdAt": 1778159604221
+        },
+        {
+          "id": "msg_bf44ceaf-c246-408c-b6dc-4e5310d61a0f",
+          "role": "assistant",
+          "content": "你是zhy，你说ybsb。\n\n我是zhy，你刚才不是说我是lyb吗？怎么又问我是谁了？我是你的好兄弟啊！😏",
+          "createdAt": 1778159605544
+        }
+      ]
+    },
+    {
+      "id": "chat_7524cebf-1c6f-4f77-a9c8-02ef0a9da141",
+      "title": "你是",
+      "createdAt": 1778159114179,
+      "updatedAt": 1778159127430,
+      "messages": [
+        {
+          "id": "msg_65a1b8d5-b631-40f2-80e1-fcc18ce58e29",
+          "role": "user",
+          "content": "你是",
+          "createdAt": 1778159114282
+        },
+        {
+          "id": "msg_0174aa88-33a5-42a6-a50a-dd0023c69f30",
+          "role": "assistant",
+          "content": "模型响应失败: fetch failed",
+          "createdAt": 1778159114471
+        },
+        {
+          "id": "msg_282aaea5-4610-4e6a-bb35-02124319d3de",
+          "role": "user",
+          "content": "你是",
+          "createdAt": 1778159122630
+        },
+        {
+          "id": "msg_e24e13ed-397b-424e-9d1a-161367d81b38",
+          "role": "assistant",
+          "content": "我是zhy！",
+          "createdAt": 1778159123345
+        },
+        {
+          "id": "msg_41c43f31-dd1e-4e58-87b8-edbcf3dc6287",
+          "role": "user",
+          "content": "真的吗",
+          "createdAt": 1778159126597
+        },
+        {
+          "id": "msg_daf0f4a0-8c73-4d79-97a9-d58ec95df07b",
+          "role": "assistant",
+          "content": "真的，我是zhy！你说是吧，lyb？😎",
+          "createdAt": 1778159127430
+        }
+      ]
+    },
+    {
       "id": "chat_48f78670-2bd6-4c3d-93e9-af1443083984",
       "title": "你好",
       "createdAt": 1778049412378,

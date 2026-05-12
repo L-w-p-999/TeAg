@@ -1,9 +1,11 @@
 import type { LLMChatRequest, LLMChatResponse, LLMProvider, ToolDefinition, ToolUseBlock } from "../types";
+import { normalizeMessages } from "../normalize";
 
 // DeepSeek API 的消息格式
 // content 可以是字符串，也可以是 null（当有 tool_calls 时）
 type DeepSeekMessage =
   | { role: "system" | "user" | "assistant"; content: string }
+  | { role: "assistant"; content: ""; tool_calls: DeepSeekToolCall[] }
   | { role: "tool"; content: string; tool_call_id: string }; // 工具结果消息
 
 // DeepSeek API 的工具格式（OpenAI 兼容格式）
@@ -54,8 +56,10 @@ export class DeepSeekProvider implements LLMProvider {
     // 只有这些消息后面的 tool_result 才是合法的
     const messages: DeepSeekMessage[] = [];
 
-    for (let i = 0; i < req.messages.length; i++) {
-      const m = req.messages[i];
+    const normalizedMessages = normalizeMessages(req.messages);
+
+    for (let i = 0; i < normalizedMessages.length; i++) {
+      const m = normalizedMessages[i];
 
       if (typeof m.content === "string") {
         // 普通文字消息（system / user / assistant 普通回复）
@@ -108,7 +112,7 @@ export class DeepSeekProvider implements LLMProvider {
             role: "assistant",
             content: "",
             tool_calls: toolCalls,
-          } as unknown as DeepSeekMessage);
+          });
         }
       }
     }

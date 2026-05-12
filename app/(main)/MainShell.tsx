@@ -374,8 +374,8 @@ export default function MainShell({ children }: { children: React.ReactNode }) {
         extra={
           <Button
             type="primary"
-            onClick={() => {
-              applySystemPrompt();
+            onClick={async () => {
+              await applySystemPrompt();
               setPromptDrawerOpen(false);
             }}
           >

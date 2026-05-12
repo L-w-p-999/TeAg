@@ -4,6 +4,8 @@ import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowUpOutlined, PlusOutlined } from "@ant-design/icons";
 import { Button, Input, Spin, Typography } from "antd";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useModel } from "@/lib/store/modelContext";
 
 const HOME_SAMPLES = [
@@ -29,11 +31,52 @@ type Chat = {
   messages: ChatMessage[];
 };
 
-type ChatComposerProps = {
-  systemPrompt: string;
-};
+function MarkdownMessage({ content }: { content: string }) {
+  return (
+    <div className="markdown-message text-sm leading-6 text-gray-800">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          h1: ({ children }) => <h1 className="mb-3 mt-1 text-2xl font-semibold leading-8">{children}</h1>,
+          h2: ({ children }) => <h2 className="mb-3 mt-1 text-xl font-semibold leading-7">{children}</h2>,
+          h3: ({ children }) => <h3 className="mb-2 mt-1 text-lg font-semibold leading-7">{children}</h3>,
+          p: ({ children }) => <p className="my-2">{children}</p>,
+          ul: ({ children }) => <ul className="my-2 list-disc space-y-1 pl-5">{children}</ul>,
+          ol: ({ children }) => <ol className="my-2 list-decimal space-y-1 pl-5">{children}</ol>,
+          blockquote: ({ children }) => (
+            <blockquote className="my-3 border-l-4 border-gray-300 pl-3 text-gray-600">{children}</blockquote>
+          ),
+          code: ({ children }) => (
+            <code className="rounded bg-gray-100 px-1 py-0.5 font-mono text-[0.92em] text-gray-900">
+              {children}
+            </code>
+          ),
+          pre: ({ children }) => (
+            <pre className="my-3 overflow-x-auto rounded-md bg-gray-950 p-3 text-sm leading-6 text-gray-50">
+              {children}
+            </pre>
+          ),
+          table: ({ children }) => (
+            <div className="my-3 overflow-x-auto">
+              <table className="min-w-full border-collapse text-left text-sm">{children}</table>
+            </div>
+          ),
+          th: ({ children }) => <th className="border border-gray-200 bg-gray-100 px-3 py-2 font-semibold">{children}</th>,
+          td: ({ children }) => <td className="border border-gray-200 px-3 py-2">{children}</td>,
+          a: ({ children, href }) => (
+            <a className="text-blue-600 underline underline-offset-2" href={href} target="_blank" rel="noreferrer">
+              {children}
+            </a>
+          ),
+        }}
+      >
+        {content}
+      </ReactMarkdown>
+    </div>
+  );
+}
 
-function ChatGPTLikeHome({ systemPrompt }: ChatComposerProps) {
+function ChatGPTLikeHome() {
   const [value, setValue] = useState("");
   const [typed, setTyped] = useState("");
   const [sending, setSending] = useState(false);
@@ -67,7 +110,6 @@ function ChatGPTLikeHome({ systemPrompt }: ChatComposerProps) {
           content,
           provider: selected.provider,
           model: selected.model,
-          systemPrompt,
         }),
       });
       setValue("");
@@ -135,7 +177,7 @@ function ChatGPTLikeHome({ systemPrompt }: ChatComposerProps) {
   );
 }
 
-function ChatThread({ chatId, systemPrompt }: { chatId: string; systemPrompt: string }) {
+function ChatThread({ chatId }: { chatId: string }) {
   const [chat, setChat] = useState<Chat | null>(null);
   const [loading, setLoading] = useState(true);
   const [value, setValue] = useState("");
@@ -189,7 +231,6 @@ function ChatThread({ chatId, systemPrompt }: { chatId: string; systemPrompt: st
           content,
           provider: selected.provider,
           model: selected.model,
-          systemPrompt,
         }),
       });
       if (!res.ok) throw new Error(await res.text());
@@ -230,11 +271,15 @@ function ChatThread({ chatId, systemPrompt }: { chatId: string; systemPrompt: st
             >
               <div
                 className={[
-                  "max-w-[92%] whitespace-pre-wrap rounded-2xl px-4 py-3 text-sm leading-6",
+                  "max-w-[92%] rounded-2xl px-4 py-3 text-sm leading-6",
                   m.role === "user" ? "bg-black text-white" : "bg-gray-50 text-gray-800",
                 ].join(" ")}
               >
-                {m.content}
+                {m.role === "assistant" ? (
+                  <MarkdownMessage content={m.content} />
+                ) : (
+                  <div className="whitespace-pre-wrap">{m.content}</div>
+                )}
               </div>
             </div>
           ))}
@@ -295,15 +340,14 @@ function ChatThread({ chatId, systemPrompt }: { chatId: string; systemPrompt: st
 
 function MyChatGPTPageInner() {
   const searchParams = useSearchParams();
-  const { systemPrompt } = useModel();
 
   const chatId = useMemo(() => searchParams.get("chatId")?.trim() || "", [searchParams]);
 
   if (!chatId) {
-    return <ChatGPTLikeHome systemPrompt={systemPrompt} />;
+    return <ChatGPTLikeHome />;
   }
 
-  return <ChatThread chatId={chatId} systemPrompt={systemPrompt} />;
+  return <ChatThread chatId={chatId} />;
 }
 
 export default function MyChatGPTPage() {
