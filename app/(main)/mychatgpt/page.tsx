@@ -31,6 +31,29 @@ type Chat = {
   messages: ChatMessage[];
 };
 
+async function readTextStream(res: Response, onDelta: (delta: string) => void) {
+  if (!res.body) {
+    onDelta(await res.text());
+    return;
+  }
+
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+
+  try {
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      onDelta(decoder.decode(value, { stream: true }));
+    }
+
+    const rest = decoder.decode();
+    if (rest) onDelta(rest);
+  } finally {
+    reader.releaseLock();
+  }
+}
+
 function MarkdownMessage({ content }: { content: string }) {
   return (
     <div className="markdown-message text-sm leading-6 text-gray-800">
@@ -103,7 +126,7 @@ function ChatGPTLikeHome() {
     try {
       const chatRes = await fetch("/api/chats", { method: "POST" });
       const chatData = (await chatRes.json()) as { chatId: string };
-      await fetch(`/api/chats/${encodeURIComponent(chatData.chatId)}/messages`, {
+      const res = await fetch(`/api/chats/${encodeURIComponent(chatData.chatId)}/messages`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
@@ -112,6 +135,8 @@ function ChatGPTLikeHome() {
           model: selected.model,
         }),
       });
+      if (!res.ok) throw new Error(await res.text());
+      await readTextStream(res, () => {});
       setValue("");
       // 通知侧边栏刷新聊天列表
       window.dispatchEvent(new Event("chat-updated"));
@@ -234,8 +259,36 @@ function ChatThread({ chatId }: { chatId: string }) {
         }),
       });
       if (!res.ok) throw new Error(await res.text());
-      const data = (await res.json()) as { chat: Chat };
-      setChat(data.chat);
+
+      const assistantMessageId = `tmp_assistant_${Date.now()}`;
+      setChat((prev) =>
+        prev
+          ? {
+              ...prev,
+              messages: [
+                ...prev.messages,
+                { id: assistantMessageId, role: "assistant", content: "", createdAt: Date.now() },
+              ],
+            }
+          : prev,
+      );
+
+      await readTextStream(res, (delta) => {
+        setChat((prev) =>
+          prev
+            ? {
+                ...prev,
+                messages: prev.messages.map((message) =>
+                  message.id === assistantMessageId
+                    ? { ...message, content: message.content + delta }
+                    : message,
+                ),
+              }
+            : prev,
+        );
+      });
+
+      await reload();
       // 通知侧边栏刷新聊天列表
       window.dispatchEvent(new Event("chat-updated"));
     } finally {

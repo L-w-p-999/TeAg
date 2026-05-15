@@ -83,3 +83,84 @@ export async function agentRun(
 
   return "Agent 达到最大轮次限制，任务未完成";
 }
+
+export async function agentRunStream(
+  userQuery: string,
+  history: LLMMessage[],
+  provider: LLMProvider,
+  model: string,
+  onTextDelta: (delta: string) => void | Promise<void>,
+  systemPrompt?: string,
+  toolContext?: ToolContext,
+): Promise<string> {
+  const systemMessage = systemPrompt?.trim();
+
+  const state: LoopState = {
+    messages: [
+      ...(systemMessage ? [{ role: "system" as const, content: systemMessage }] : []),
+      ...history,
+      { role: "user" as const, content: userQuery },
+    ],
+    turn_count: 1,
+    transition_reason: null,
+  };
+
+  const context = toolContext ?? { chatId: "" };
+
+  while (state.turn_count <= MAX_TURNS) {
+    if (provider.streamChat) {
+      let streamedContent = "";
+
+      for await (const chunk of provider.streamChat({ model, messages: state.messages, tools: toolDefinitions })) {
+        if (!chunk.content) continue;
+        streamedContent += chunk.content;
+        await onTextDelta(chunk.content);
+      }
+
+      if (streamedContent) {
+        state.messages.push({ role: "assistant", content: streamedContent });
+        return streamedContent;
+      }
+    }
+
+    let response;
+    try {
+      response = await provider.chat({ model, messages: state.messages, tools: toolDefinitions });
+    } catch (e) {
+      console.error("[Agent] provider.chat threw:", e);
+      throw e;
+    }
+
+    if (response.tool_uses && response.tool_uses.length > 0) {
+      state.messages.push({ role: "assistant", content: response.tool_uses });
+    } else {
+      state.messages.push({ role: "assistant", content: response.content });
+    }
+
+    if (response.stop_reason !== "tool_use" || !response.tool_uses?.length) {
+      if (response.content) {
+        await onTextDelta(response.content);
+      }
+      return response.content;
+    }
+
+    const toolResults: ToolResultBlock[] = [];
+    for (const toolUse of response.tool_uses) {
+      let result: string;
+      try {
+        result = await dispatchTool(toolUse.name, toolUse.input as Record<string, unknown>, context);
+      } catch (e) {
+        result = `工具执行失败: ${e instanceof Error ? e.message : String(e)}`;
+      }
+      toolResults.push({ type: "tool_result", tool_use_id: toolUse.id, content: result });
+    }
+
+    state.messages.push({ role: "user", content: toolResults });
+    state.turn_count += 1;
+    state.transition_reason = "tool_result";
+  }
+
+  const content = "Agent 达到最大轮次限制，任务未完成";
+  await onTextDelta(content);
+  return content;
+}

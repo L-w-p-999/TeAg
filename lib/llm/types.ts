@@ -43,6 +43,11 @@ export type LLMChatResponse = {
   tool_uses?: ToolUseBlock[];
 };
 
+export type LLMStreamChunk = {
+  content?: string;
+};
+
 export interface LLMProvider {
   chat(req: LLMChatRequest): Promise<LLMChatResponse>;
+  streamChat?(req: LLMChatRequest): AsyncIterable<LLMStreamChunk>;
 }

@@ -1,4 +1,4 @@
-import type { LLMChatRequest, LLMChatResponse, LLMProvider, ToolDefinition, ToolUseBlock } from "../types";
+import type { LLMChatRequest, LLMChatResponse, LLMProvider, LLMStreamChunk, ToolDefinition, ToolUseBlock } from "../types";
 import { normalizeMessages } from "../normalize";
 
 // DeepSeek API 的消息格式
@@ -38,6 +38,14 @@ type DeepSeekResponse = {
   }[];
 };
 
+type DeepSeekStreamResponse = {
+  choices?: {
+    delta?: {
+      content?: string | null;
+    };
+  }[];
+};
+
 export class DeepSeekProvider implements LLMProvider {
   constructor(
     private readonly opts: {
@@ -46,10 +54,7 @@ export class DeepSeekProvider implements LLMProvider {
     },
   ) {}
 
-  async chat(req: LLMChatRequest): Promise<LLMChatResponse> {
-    const baseUrl = this.opts.baseUrl ?? "https://api.deepseek.com";
-    const url = new URL("/chat/completions", baseUrl);
-
+  private buildRequestBody(req: LLMChatRequest, stream: boolean): Record<string, unknown> {
     // 把我们内部的 LLMMessage 格式转成 DeepSeek API 格式
     // 关键：tool_result 消息必须紧跟在有 tool_calls 的 assistant 消息后面
     // 所以我们先扫一遍，找出哪些 assistant 消息真的有 tool_calls，
@@ -130,6 +135,7 @@ export class DeepSeekProvider implements LLMProvider {
     const body: Record<string, unknown> = {
       model: req.model,
       messages,
+      stream,
     };
 
     // 只有有工具时才传 tools 字段
@@ -138,13 +144,20 @@ export class DeepSeekProvider implements LLMProvider {
       body.tool_choice = "auto"; // 让模型自己决定要不要调工具
     }
 
+    return body;
+  }
+
+  async chat(req: LLMChatRequest): Promise<LLMChatResponse> {
+    const baseUrl = this.opts.baseUrl ?? "https://api.deepseek.com";
+    const url = new URL("/chat/completions", baseUrl);
+
     const res = await fetch(url, {
       method: "POST",
       headers: {
         "content-type": "application/json",
         authorization: `Bearer ${this.opts.apiKey}`,
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify(this.buildRequestBody(req, false)),
       cache: "no-store",
     });
 
@@ -181,5 +194,60 @@ export class DeepSeekProvider implements LLMProvider {
       content: content || "",
       stop_reason: "end_turn",
     };
+  }
+
+  async *streamChat(req: LLMChatRequest): AsyncIterable<LLMStreamChunk> {
+    const baseUrl = this.opts.baseUrl ?? "https://api.deepseek.com";
+    const url = new URL("/chat/completions", baseUrl);
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${this.opts.apiKey}`,
+      },
+      body: JSON.stringify(this.buildRequestBody(req, true)),
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      const text = await res.text().catch(() => "");
+      throw new Error(`DeepSeek chat stream failed (${res.status}): ${text}`);
+    }
+
+    if (!res.body) {
+      throw new Error("DeepSeek chat stream failed: empty response body");
+    }
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+
+    try {
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? "";
+
+        for (const rawLine of lines) {
+          const line = rawLine.trim();
+          if (!line.startsWith("data:")) continue;
+
+          const data = line.slice(5).trim();
+          if (!data || data === "[DONE]") continue;
+
+          const parsed = JSON.parse(data) as DeepSeekStreamResponse;
+          const content = parsed.choices?.[0]?.delta?.content;
+          if (content) {
+            yield { content };
+          }
+        }
+      }
+    } finally {
+      reader.releaseLock();
+    }
   }
 }

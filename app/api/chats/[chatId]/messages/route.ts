@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { appendMessage, getChat } from "@/lib/chat/store";
 import { getLLMModel, getLLMProvider } from "@/lib/llm";
 import type { LLMMessage } from "@/lib/llm/types";
-import { agentRun } from "@/lib/agent/runner";
+import { agentRunStream } from "@/lib/agent/runner";
 import { getSystemPrompt } from "@/lib/system-prompt/cache";
 
 export async function POST(req: Request, ctx: { params: Promise<{ chatId: string }> }) {
@@ -34,26 +34,43 @@ export async function POST(req: Request, ctx: { params: Promise<{ chatId: string
     .slice(0, -1) // 去掉最后一条（就是刚存的 user 消息）
     .map((m) => ({ role: m.role, content: m.content }));
 
-  let replyContent: string;
-  try {
-    const provider = getLLMProvider(providerName);
-    const model = body?.model || getLLMModel(providerName);
-    replyContent = await agentRun(
-      content,   // 用户本次输入（agentRun 内部会追加到 messages 末尾）
-      history,   // 纯历史，不含本次 user 消息，不含 systemPrompt
-      provider,
-      model,
-      systemPrompt,
-      { chatId },
-    );
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    console.error("[Agent Error]", msg);
-    replyContent = `模型响应失败: ${msg}`;
-  }
+  const provider = getLLMProvider(providerName);
+  const model = body?.model || getLLMModel(providerName);
+  const encoder = new TextEncoder();
 
-  await appendMessage(chatId, { role: "assistant", content: replyContent });
-  const updated = await getChat(chatId);
+  const stream = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      let replyContent = "";
 
-  return NextResponse.json({ chat: updated });
+      try {
+        replyContent = await agentRunStream(
+          content, // 用户本次输入（agentRunStream 内部会追加到 messages 末尾）
+          history, // 纯历史，不含本次 user 消息，不含 systemPrompt
+          provider,
+          model,
+          (delta) => {
+            controller.enqueue(encoder.encode(delta));
+          },
+          systemPrompt,
+          { chatId },
+        );
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error("[Agent Error]", msg);
+        replyContent = `模型响应失败: ${msg}`;
+        controller.enqueue(encoder.encode(replyContent));
+      }
+
+      await appendMessage(chatId, { role: "assistant", content: replyContent });
+      controller.close();
+    },
+  });
+
+  return new Response(stream, {
+    headers: {
+      "content-type": "text/plain; charset=utf-8",
+      "cache-control": "no-cache, no-transform",
+      "x-accel-buffering": "no",
+    },
+  });
 }
